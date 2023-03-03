@@ -1,0 +1,23 @@
+[
+    {
+        "nama": "Muhammad Syofi Azmi",
+        "nrp": "043040023",
+        "email": "syofi@yahoo.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 1
+    },
+    {
+        "nama": "Hafiz Anwari",
+        "nrp": "043040024",
+        "email": "hafiz@yahoo.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 2
+    },
+    {
+        "nama": "Subhan Noor",
+        "nrp": "043040025",
+        "email": "subhan@yahoo.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 3
+    }
+]
