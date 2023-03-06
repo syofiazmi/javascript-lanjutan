@@ -37,9 +37,9 @@
 
 
 
-// Refactoring
-// Biar lebih mudah di baca
+// Refactor
 
+// ketika menulis judul film dan menekan tombol search
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', async function () {
     const inputKeyword = document.querySelector('.input-keyword');
@@ -48,6 +48,23 @@ searchButton.addEventListener('click', async function () {
 });
 
 
+function getMovies(keyword) {
+    return fetch('http://www.omdbapi.com/?apikey=528ee0a4&s=' + keyword)
+        .then(response => response.json())
+        .then(response => response.Search);
+}
+
+
+function updateUI(movies) {
+    let cards = '';
+    movies.forEach(m => cards += showCards(m));
+
+    const movieContainer = document.querySelector('.movie-container');
+    movieContainer.innerHTML = cards;
+}
+
+
+// ketika tombol detail di-klik
 // event binding
 document.addEventListener('click', async function (e) {
     if (e.target.classList.contains('modal-detail-button')) {
@@ -73,23 +90,8 @@ function updateUIDetail(m) {
 
 
 
-function getMovies(keyword) {
-    return fetch('http://www.omdbapi.com/?apikey=528ee0a4&s=' + keyword)
-        .then(response => response.json())
-        .then(response => response.Search);
-}
 
-
-function updateUI(movies) {
-    let cards = '';
-    movies.forEach(m => cards += showCards(m));
-
-    const movieContainer = document.querySelector('.movie-container');
-    movieContainer.innerHTML = cards;
-}
-
-
-
+// Function untuk menampilkan datanya
 function showCards(m) {
     return ` <div class="col-md-4 my-3">
                 <div class="card">
