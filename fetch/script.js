@@ -51,7 +51,7 @@ document.addEventListener('click', async function (e) {
             const movieDetail = await getMovieDetail(imdbid);
             updateUIDetail(movieDetail);
         } catch (err) {
-            console.log(err);
+            alert(err);
         }
     }
 
@@ -59,7 +59,7 @@ document.addEventListener('click', async function (e) {
 
 
 function getMovieDetail(imdbid) {
-    return fetch('http://www.omdbapi.com/?apikey=528ee0a4&i=' + imdbid)
+    return fetch('http://www.omdbapi.com/?apiey=528ee0a4&i=' + imdbid)
         .then(response => {
             if (!response.ok){
                 throw new Error(response.statusText);
